@@ -34,7 +34,7 @@ public class ActivityAction extends PaginationAction{
 	private Integer id;
 	private String url;
 
-	
+	 
 	
 	public String list(){
 		return "list";
