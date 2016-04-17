@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>	
+	<package name="community" extends="common" namespace="/">
+		<action name="community" class="communityAction">
+			<result name="list">/manage/community/community_list.jsp</result>
+			<result name="_list">/manage/community/community_list_content.jsp</result>
+		</action>
+		
+		<action name="nature" class="natureAction">
+			<result name="list">/manage/nature/nature_list.jsp</result>
+			<result name="_list">/manage/nature/nature_list_content.jsp</result>
+		</action>
+		
+		<action name="activity" class="activityAction">
+			<result name="list">/manage/activity/activity_list.jsp</result>
+			<result name="_list">/manage/activity/activity_list_content.jsp</result>
+		</action>
+		
+		<action name="mail" class="mailAction">
+			<result name="list">/manage/mail/mail.jsp</result>
+		</action>
+    </package>
+</struts>

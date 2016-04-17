@@ -1,0 +1,11 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+
+/* selcity */
+.selcity{padding:2px 0 4px 0;z-index:10;position:relative;}
+.selcity table{margin:0px auto;width:100%;border-collapse:collapse}
+.selcity table td{border:#8b3d3b 1px dashed;font-size:14px;vertical-align:middle;width:157px;color:#fff;height:39px;text-align:center}
+.selcity table td a{display:block;color:#fff;line-height:40px;height:40px;text-decoration:none}
+.selcity table td a:hover{background:#a86e6d;color:#fff;text-decoration:none}
+.selcity table td a.cur{background:#a86e6d}

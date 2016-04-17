@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<constant name="struts.convention.action.mapallmatches" value="true"/>
+    <constant name="struts.ui.theme" value="simple" />  
+    <constant name="struts.multipart.saveDir" value="/temp"/>  
+    <constant name="struts.multipart.maxSize" value="21971520"/>
+    <include file="action/common.xml"></include>
+    <include file="action/user.xml"></include>
+    <include file="action/module.xml"></include>
+    <include file="action/community.xml"></include>
+</struts>

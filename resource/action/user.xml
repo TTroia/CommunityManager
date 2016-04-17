@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>	
+	<package name="user" extends="common" namespace="/">	
+		<action name="user" class="userAction">
+			<result name="list">/manage/user_list.jsp</result>
+			<result name="_list">/manage/user_list_content.jsp</result>
+			<result name="inAdd">/manage/user_add.jsp</result>
+			<result name="edit">/manage/user_edit.jsp</result>
+			<result name="editAuth">/manage/user_edit_auth.jsp</result>
+			<result name="getUserMenuList">/getMenuPowerList.jsp</result>
+			<!-- 供应商 -->
+			<result name="gongysList">/manage/gongys/gongys_list.jsp</result>
+			<result name="_gongysList">/manage/gongys/gongys_list_content.jsp</result>
+		</action>
+		
+		<action name="login" class="loginAction">
+			<result name="index">/main.jsp</result>
+			<result name="loginOut">/index.jsp</result>
+		</action>
+		
+		<action name="role" class="roleAction">
+			<result name="list">/manage/role_list.jsp</result>
+			<result name="edit">/manage/role_edit.jsp</result>
+			<result name="editAuth">/manage/role_edit_auth.jsp</result>
+		</action>
+		 
+    </package>
+</struts>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>tool</shortname>
+	<uri>/query-tags</uri>
+
+	<tag>
+		<name>dynamicPage</name>
+		<tagclass>com.hispeed.kcs.commons.taglib.DynamicPageTag</tagclass>
+		<bodycontent>JSP</bodycontent>
+		<attribute>
+			<!-- 分页前，调用JS的方法名 -->
+			<name>before</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 分页后，调用JS的方法名 -->
+			<name>behind</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 是否显示跳转框 -->
+			<name>hasGo</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- request请求中存放的参数名称 -->
+			<name>view</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- 控制表单合并项 -->
+			<name>colspan</name>
+			<required>false</required>
+		</attribute>
+		<attribute>
+			<!-- AJAX操作的表单DIV名称 -->
+			<name>form</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<!-- AJAX操作的结果区域DIV名称 -->
+			<name>resultDiv</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>

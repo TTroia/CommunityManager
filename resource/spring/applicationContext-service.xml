@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-autowire="byName">
+	
+	<bean id="baseService" class="com.hdc.service.BaseServiceImpl"
+		scope="prototype">
+		<property name="baseDao">
+			<ref bean="baseDao" />
+		</property>
+	</bean>
+	
+	<bean id="userService" class="com.hdc.service.UserServiceImpl"
+		scope="prototype">
+		<property name="userDao">
+			<ref bean="userDao" />
+		</property>
+	</bean>
+	
+	<bean id="customService" class="com.hdc.service.CustomServiceImpl"
+		scope="prototype">
+		<property name="customDao">
+			<ref bean="customDao"/>
+		</property>
+	</bean>
+	
+</beans>

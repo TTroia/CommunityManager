@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>	
+	<package name="module" extends="common" namespace="/">	
+		<action name="module" class="moduleAction">
+			<result name="list">/manage/module/module_list.jsp</result>
+			<result name="inAdd">/manage/module/module_add.jsp</result>
+			<result name="edit">/manage/module/module_edit.jsp</result>
+		</action>
+    </package>
+</struts>
