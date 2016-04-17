@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+@import "skins/default.css";
+@import "skins/extform.css";
+
+FORM {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	PADDING-TOP: 0px;
+	MARGIN: 0px;
+}
+
+input {
+	margin-top: 1px;
+	margin-left: 2px;
+	margin-right:auto;
+	padding-top: 1px;
+	padding-left: 2px;
+	padding-right: 1px;
+}
+
+select {
+	font-size: 14px;
+	margin-top: 1px;
+	margin-left: 2px;
+	padding-top: 1px;
+	padding-left: 2px;
+	padding-right: 1px;
+}
+
+textarea {
+	font-size:13px;
+	margin-top: 1px;
+	margin-left: 2px;
+	padding-top: 1px;
+	padding-left: 2px;
+	padding-right: 1px;
+}
+
+img {
+	margin: 0px;
+	border: none;
+}

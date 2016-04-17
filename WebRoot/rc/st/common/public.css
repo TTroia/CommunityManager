@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+@import "form.css";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+HTML {
+	font-family: 宋体, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 13px; *
+	font-size: 12px;
+	height: 100%;
+	overflow: hidden;
+}
+
+BODY {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+H1,H2,H3,H4,H5,H6 {
+	MARGIN-TOP: 15px;
+	MARGIN-BOTTOM: 15px;
+	PADDING-BOTTOM: 0px;
+}
+
+H1 {
+	FONT-SIZE: 1.3em
+}
+
+H2 {
+	FONT-SIZE: 1.1em
+}
+
+H3,H4,H5,H6 {
+	FONT-SIZE: 1em
+}
+
+BR {
+	LINE-HEIGHT: 0.6em
+}
+
+HR {
+	BORDER-RIGHT: gray 1px solid;
+	BORDER-TOP: gray 1px solid;
+	BORDER-LEFT: gray 1px solid;
+	BORDER-BOTTOM: gray 1px solid;
+	HEIGHT: 1px
+}
+
+P {
+	margin: 1ex 0px;
+}
+
+FIELDSET {
+	PADDING-RIGHT: 0.5em;
+	PADDING-LEFT: 0.5em;
+	MARGIN-BOTTOM: 1em;
+	PADDING-BOTTOM: 0.5em;
+	PADDING-TOP: 0.5em
+}
+
+IFRAME {
+	margin: 0px;
+	border: 0px;
+}
+
+object {
+	margin: 0px;
+	border: 0px;
+}
+
+caption {
+	padding: 0px 0px 5px 0px;
+	text-align: right;
+}
+
+A,IMG {
+	padding: 0px;
+	margin: 0px;
+	outline:none;
+	star:expression(this.onFocus=this.blur());
+	text-decoration:none 	
+}
+
+table {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+th {
+	letter-spacing: 2px;
+	text-transform: capitalize;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+UL LI {
+	list-style-type: none;
+}

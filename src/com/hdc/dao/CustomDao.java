@@ -1,0 +1,19 @@
+package com.hdc.dao;
+
+import java.util.List;
+
+import com.hdc.model.Activity;
+import com.hdc.model.Community;
+import com.hdc.model.Member;
+import com.hdc.model.Nature;
+import com.hdc.model.Notice;
+import com.hdc.page.Page;
+
+public interface CustomDao {
+
+	public List<Community> queryCommunitieList(Community community,Page page);
+	public List<Member> queryMemberList(Member member,Page page);
+	public List<Nature> queryNatureList(Nature nature,Page page);
+	public List<Activity> queryActivityList(Activity activity,Page page);
+	public List<Notice> queryNoticeList(Notice notice);
+}	

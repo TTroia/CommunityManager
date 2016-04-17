@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- 配置上传文件大小限制  约20M -->
+	<constant name="struts.multipart.maxSize" value="20971520"/>
+	<package name="common" extends="json-default">
+    
+    	<interceptors>  
+    		<interceptor name="loginInterceptor" class="com.hdc.interceptor.LoginInterceptor"></interceptor>  
+            <interceptor-stack name="myStack">  
+                <interceptor-ref name="loginInterceptor"></interceptor-ref>  
+                <interceptor-ref name="defaultStack"></interceptor-ref>  
+            </interceptor-stack>  
+		</interceptors>  
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>  
+       <!-- 定义全局处理结果 -->
+        <global-results>
+        	<result name="timeout" type="redirect">/index.jsp</result>
+        </global-results>
+	</package>
+	
+</struts>

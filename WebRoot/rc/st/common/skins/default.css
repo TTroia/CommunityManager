@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+input[type=text] {
+	border: 1px solid #7f9db9;
+	background-color:#FFF;
+	line-height:18px;
+	height:18px;
+}
+
+input[type=password] {
+	border: 1px solid #7f9db9;
+	background-color:#FFF;
+	line-height:18px;
+	height:18px;
+}
+
+input[type=image] {
+	border: 0px;
+	cursor: pointer;
+}
+
+select {
+	border: 1px solid #7f9db9;
+	background-color:#FFF;
+}
+
+texteara {
+	border: 1px solid #7f9db9;
+	background-color:#FFF;
+}

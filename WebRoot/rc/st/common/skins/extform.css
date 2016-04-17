@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+input.readonly {
+	background-color: #EBEBE4;
+}
+
+input.money {
+	text-align: right;
+}
+
+input .t98_p,textarea .t98_p {
+	width: 98%;
+}
+
+input .t95_p,textarea .t95_p {
+	width: 95%;
+}
+
+input .t90_p,textarea .t90_p {
+	width: 90%;
+}
+
+input .t70_p,textarea .t70_p {
+	width: 70%;
+}
+
+input .t50_p,textarea .t50_p {
+	width: 50%;
+}
+
+input .t400,textarea .t400 {
+	width: 398px;
+}
+
+input .t300,textarea .t300 {
+	width: 300px;
+}
+
+input.t270 {
+	width: 270px;
+}
+
+input.t250 {
+	width: 250px;
+}
+
+input.t240 {
+	width: 240px;
+}
+
+input.t210 {
+	width: 210px;
+}
+
+input.t200 {
+	width: 200px;
+}
+
+input.t188 {
+	width: 188px;
+}
+
+input.t170 {
+	width: 170px;
+}
+
+input.t150 {
+	width: 150px;
+}
+
+input.t115 {
+	width: 115px;
+}
+
+input.t110 {
+	width: 110px;
+}
+
+input.t100 {
+	width: 100px;
+}
+
+input.t90 {
+	width: 90px;
+}
+
+input.t70 {
+	width: 70px;
+}
+
+input.t50 {
+	width: 50px;
+}
+
+input.t400_h {
+	width: 398px;
+	border: 0px;
+}
+
+input.t300_h {
+	width: 300px;
+	border: 0px;
+}
+
+input.t270_h {
+	width: 270px;
+	border: 0px;
+}
+
+input.t250_h {
+	width: 250px;
+	border: 0px;
+}
+
+input.t230_h {
+	width: 230px;
+	border: 0px;
+}
+
+input.t210_h {
+	width: 210px;
+	border: 0px;
+}
+
+input.t200_h {
+	width: 200px;
+	border: 0px;
+}
+
+input.t188_h {
+	width: 188px;
+	border: 0px;
+}
+
+input.t170_h {
+	width: 170px;
+	border: 0px;
+}
+
+input.t150_h {
+	width: 150px;
+	border: 0px;
+}
+
+input.t115_h {
+	width: 115px;
+	border: 0px;
+}
+
+input.t110_h {
+	width: 110px;
+	border: 0px;
+}
+
+input.t100_h {
+	width: 100px;
+	border: 0px;
+}
+
+input.t90_h {
+	width: 90px;
+	border: 0px;
+}
+
+input.t70_h {
+	width: 70px;
+	border: 0px;
+}
+
+input.t50_h {
+	width: 50px;
+	border: 0px;
+}
+
+textarea .t100_ph {
+	width: 100%;
+	border: 0px;
+	overflow-y: auto;
+}
+
+select.s170 {
+	width: 175px;
+}
+
+select.s188 {
+	width: 193px;
+}
+
+select.s200 {
+	width: 205px;
+}
+
+select.s210 {
+	width: 215px;
+}
+
+select.s240 {
+	width: 245px;
+}
+
+select.s250 {
+	width: 255px;
+}
+
+select.s270 {
+	width: 275px;
+}
+
+select.s300 {
+	width: 305px;
+}
+
+select.s400 {
+	width: 405px;
+}
+
+select.s500 {
+	width: 505px;
+}

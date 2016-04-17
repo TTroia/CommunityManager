@@ -1,0 +1,169 @@
+@charset "utf-8";
+@import "css.css";
+
+.ui-layout-north #logo {
+	display: block;
+	margin: 30px 0 0;
+	width: 136px;
+	font-size: 28px;
+	margin-left: 10px;
+}
+
+#logo, #topdomain {
+	float: left;
+}
+#topdomain .syn{}
+/*#topdomain .sellerMsg{ position: absolute; top:28px; left:820px;background: none!important;}*/
+#topdomain .sellerMsg a{ }
+#topdomain {
+	padding-top: 15px;
+	position:relative;	
+}
+
+#info {
+	height: 30px;
+	padding: 0px 10px 0 15px;
+	width: 100%;
+	display:block;
+}
+.ui-layout-north ul {
+	height: 33px;
+	padding: 0px 30px 0 4px;
+}
+
+.ui-layout-north ul li {
+	width: 135px;
+	text-align: center;
+	vertical-align: middle;
+	list-style-type: none;
+	float: left;
+}
+.ui-layout-north ul li a {
+	color : #171757;
+	font-size: 16px;
+	width: 135px;
+	height: 33px;     
+	line-height: 33px;
+	background: url(../../im/domain_s.png) no-repeat 0px 1px;
+	display: block;
+}
+.ui-layout-north ul li a:hover {
+	color: #1717DD;
+	font-weight: bolder;
+	background-position: 0px bottom;
+}
+
+.ui-layout-north ul li a.current {
+	color: #F1F1F1;
+	font-weight: bolder;
+	background-position: 0px bottom;
+}
+
+.ui-layout-west li {
+	margin-top:10px;
+	padding: 0px;
+	text-align: center;
+	vertical-align: middle;
+	list-style-type: none;
+}
+.ui-layout-west li a {
+	display: inline-block;
+	color : #171757;
+	font-size: 14px;
+	width: 112px;
+	height: 34px;
+	line-height: 34px;
+	background: url(../../im/menu_s.png) no-repeat 0px 0px;
+}
+.ui-layout-west li a:hover {
+	color: #1717DD;
+	background-position: 0px bottom;
+}
+
+.ui-layout-west li a.current {
+	font-weight: bolder;
+	background-position: 0px bottom;
+}
+.ui-layout-center .cb {
+	clear:both;
+	width:0px;
+	height:0px;
+}
+.ui-layout-center .funcList li {
+	margin:25px;
+	text-align: center;
+	vertical-align: middle;
+	list-style-type: none;
+	float: left;
+}
+
+.ui-layout-center .funcList li a {
+	display: inline-block;
+	color : #171757;
+	font-size: 14px;
+	width: 126px;
+	height: 34px;
+	line-height: 35px;
+	background: url(../../im/func_s.png) no-repeat 0px top;
+}
+
+.ui-layout-center .funcList li a:hover {
+	color: #1717DD;
+	background-position: 0px bottom;
+}
+
+.ui-layout-center .funcList li a.current {
+	color: #1717DD;
+	font-weight: bolder;
+	background-position: 0px bottom;
+}
+#main_center {
+	padding: 10px;	
+}
+
+#container {
+	background: #999;
+	height: 100%;
+	margin: 0px auto;
+	width: 100%;
+	max-width: 100%;
+	min-width: 1226px;
+	_width: 1226px; /* min-width for IE6 */
+}
+
+#body_foot {
+	text-align:center;
+	vertical-align: middle;
+	border: 0px;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 10px auto;
+}
+
+.copyright {
+	margin:auto 10px;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+}
+
+.welcome_font {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 26px;
+	color: #333;
+	padding-top: 100px;
+}
+
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+.red {
+	color : red;
+}
+table .product  td{border: none;}
