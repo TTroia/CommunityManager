@@ -184,7 +184,8 @@ public class ActivityAction extends PaginationAction{
 	
 	//上传word版申请书
 	public String upload(){
-		System.out.println("id"+id);
+		System.out.println("id"+activity.getId());
+	//	System.out.println("file="+file);
 		String path=request.getSession().getServletContext().getRealPath("/upload");
 		String fileName= super.getUser().getCommunityName()+"_"+DateUtil.dateConvertToString(new Date(), "yyyy-MM-dd")+"_"+fileFileName;
 		try {
@@ -221,8 +222,6 @@ public class ActivityAction extends PaginationAction{
 			url=new String(url.getBytes("iso8859-1"),"UTF-8");
 			System.out.println("url="+url);
 			File dFile = new File(url.trim());
-			System.out.println(dFile.exists());
-			System.out.println(dFile.length());
 			
 			this.fileFileName=url.substring(url.lastIndexOf("/")+1);
 			
