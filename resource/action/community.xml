@@ -19,6 +19,11 @@
 			<result name="_list">/manage/activity/activity_list_content.jsp</result>
 		</action>
 		
+		<action name="member" class="memberAction">
+			<result name="list">/manage/member/member_list.jsp</result>
+			<result name="_list">/manage/member/member_list_content.jsp</result>
+		</action>
+		
 		<action name="mail" class="mailAction">
 			<result name="list">/manage/mail/mail.jsp</result>
 		</action>

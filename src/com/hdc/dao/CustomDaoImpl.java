@@ -57,7 +57,9 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 		StringBuffer sql = new StringBuffer();
 		sql.append("select * from ").append(Constant.MEMBER_TABLE_NAME)
 				.append(" where 1=1  ");
-
+		if(null!=member.getCom_id()){
+			sql.append("and com_id = "+member.getCom_id());
+		}
 		sql.append(" order by  createDate desc");
 		if (page != null) {
 			StringBuffer buffer = new StringBuffer();

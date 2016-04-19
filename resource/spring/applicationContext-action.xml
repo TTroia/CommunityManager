@@ -6,6 +6,10 @@
     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
 	default-autowire="byName">
 	
+	<bean id="memberAction" class="com.hdc.action.MemberAction"
+		scope="prototype">
+	</bean>
+	
 	<bean id="mailAction" class="com.hdc.action.MailAction"
 		scope="prototype">
 	</bean>

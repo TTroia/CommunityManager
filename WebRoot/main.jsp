@@ -361,6 +361,7 @@ $(function ()
     <script type="text/javascript" src="<c:url value='/js/classie.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/js/modalEffects.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/rc/sc/util.min.js'/>"></script>
+    <script type="text/javascript" src="<c:url value='/rc/sc/jq/plus/jquery.form-3.25.min.js'/>"></script>
     <script type="text/javascript" src="<c:url value='/rc/sc/Date97/WdatePicker.js'/>"></script>
   <script>
 

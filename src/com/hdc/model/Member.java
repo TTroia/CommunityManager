@@ -20,7 +20,7 @@ public class Member {
 	private String createUser;
 	private String name;
 	private Integer sex; //0女 1男
-	private Integer sno; //学号
+	private String sno; //学号
 	private String phone;
 	private String qq;
 	private String department;  //系别
@@ -74,10 +74,11 @@ public class Member {
 	public void setSex(Integer sex) {
 		this.sex = sex;
 	}
-	public Integer getSno() {
+	
+	public String getSno() {
 		return sno;
 	}
-	public void setSno(Integer sno) {
+	public void setSno(String sno) {
 		this.sno = sno;
 	}
 	public String getPhone() {
