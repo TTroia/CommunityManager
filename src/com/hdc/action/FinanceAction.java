@@ -30,6 +30,7 @@ public class FinanceAction extends PaginationAction {
 			if(null==this.finance){
 				finance=new Finance();
 			}
+			finance.setCom_id(super.getUser().getCommunityId());
 			this.resultList=this.customService.queryFinanceList(finance, null);
 		} catch (Exception e) {
 			log.error(StringUtil.outputException(e));
@@ -39,7 +40,9 @@ public class FinanceAction extends PaginationAction {
 	
 	public String add(){
 		try {
-			List<Finance> tempList = this.customService.queryFinanceList(new Finance(), null);
+			Finance fa= new Finance();
+			fa.setCom_id(super.getUser().getCommunityId());
+			List<Finance> tempList = this.customService.queryFinanceList(fa, null);
 			if(tempList.size()>0){
 				if(way==0){
 					this.finance.setBalance(tempList.get(tempList.size()-1).getBalance()+this.finance.getSpend());
@@ -68,7 +71,9 @@ public class FinanceAction extends PaginationAction {
 	
 	public String update(){
 		try {
-			List<Finance> tempList = this.customService.queryFinanceList(new Finance(), null);
+			Finance fa= new Finance();
+			fa.setCom_id(super.getUser().getCommunityId());
+			List<Finance> tempList = this.customService.queryFinanceList(fa, null);
 			Finance tmpFinance=(Finance) this.baseService.getObjectById(this.finance);
 			if(tempList.size()>0){
 				if(way==0){
