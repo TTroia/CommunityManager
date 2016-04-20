@@ -12,7 +12,7 @@
       <form class="navbar-form navbar-left" role="search" id="searchform" method="post" action="<c:url value='/finance!_list.action' />">
       <input type="hidden" id="searchformpn" name="pn" value="${page.pageNo }"/>
          <div class="form-group">
-            <input type="text" class="form-control" name="nature.name" placeholder="Search" style="height:30px">
+            <input type="text" class="form-control" name="finance.purpose" placeholder="Search" style="height:30px">
          </div>
       </form>    
    </div>

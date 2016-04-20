@@ -49,11 +49,12 @@
 							${result.balance}
 						</td>
 						<td>
+							<c:if test="${resultList.size()==i.index+1 }">
 							<button type="button" class="btn btn-info btn-xs" onclick="show_edit_dialog2('${result.id}','${result.purpose }','${result.spend }','${result.balance }')";>修改</button>&nbsp;&nbsp;
 							<button onclick="show_pro('${result.id}')" type="button" class="btn btn-info btn-xs" title="确定删除吗？" style="margin-right: 0px;" id="${result.id }delPro" 
       						data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="<div style='text-align:right'><button type='button' class='btn btn-info btn-xs' onclick='del(${result.id });'>确认</button></div>">
       						删除</button>
-							
+      						</c:if>
 						</td>
 					</tr>
 				</c:forEach>
