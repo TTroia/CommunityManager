@@ -32,5 +32,9 @@
 			<result name="list">/manage/finance/finance_list.jsp</result>
 			<result name="_list">/manage/finance/finance_list_content.jsp</result>
 		</action>
+		
+		<action name="activityAnalysis" class="activityAnalysisAction">
+			<result name="list">/manage/analysis/activityAnalysis.jsp</result>
+		</action>
     </package>
 </struts>
