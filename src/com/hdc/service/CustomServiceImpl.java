@@ -5,6 +5,7 @@ import java.util.List;
 import com.hdc.dao.CustomDao;
 import com.hdc.model.Activity;
 import com.hdc.model.Community;
+import com.hdc.model.Finance;
 import com.hdc.model.Member;
 import com.hdc.model.Nature;
 import com.hdc.model.Notice;
@@ -44,5 +45,10 @@ public class CustomServiceImpl implements CustomService {
 	@Override
 	public List<Notice> queryNoticeList(Notice notice) {
 		return this.customDao.queryNoticeList(notice);
+	}
+
+	@Override
+	public List<Finance> queryFinanceList(Finance finance, Page page) {
+		return this.customDao.queryFinanceList(finance,page);
 	}
 }

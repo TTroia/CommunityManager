@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.hdc.model.Activity;
 import com.hdc.model.Community;
+import com.hdc.model.Finance;
 import com.hdc.model.Member;
 import com.hdc.model.Nature;
 import com.hdc.model.Notice;
@@ -165,6 +166,36 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 				sql.toString(),
 				new ObjectRowMapper(notice, super
 						.getColumnList(Constant.NOTICE_TABLE_NAME)));
+		return list;
+	}
+
+	@Override
+	public List<Finance> queryFinanceList(Finance finance, Page page) {
+		if (finance == null) {
+			return null;
+		}
+		StringBuffer sql = new StringBuffer();
+		sql.append("select * from ").append(Constant.FINANCE_TABLE_NAME)
+				.append(" where 1=1  ");
+		sql.append(" order by  editDate asc");
+		if (page != null) {
+			StringBuffer buffer = new StringBuffer();
+			buffer.append("select count(*) from (");
+			buffer.append(sql);
+			buffer.append(") a");
+			int pageTotal = this.getJdbcTemplate().queryForInt(
+					buffer.toString());
+			page.setTotalRows(pageTotal);
+			sql.append(" limit " + page.getOffset() + "," + page.getLimit());
+		}
+		log.info(sql);
+		List<Finance> list = this.getJdbcTemplate().query(
+				sql.toString(),
+				new ObjectRowMapper(finance, super
+						.getColumnList(Constant.FINANCE_TABLE_NAME)));
+		if (page != null) {
+			page.setResultList(list);
+		}
 		return list;
 	}
 

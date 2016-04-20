@@ -27,5 +27,10 @@
 		<action name="mail" class="mailAction">
 			<result name="list">/manage/mail/mail.jsp</result>
 		</action>
+		
+		<action name="finance" class="financeAction">
+			<result name="list">/manage/finance/finance_list.jsp</result>
+			<result name="_list">/manage/finance/finance_list_content.jsp</result>
+		</action>
     </package>
 </struts>

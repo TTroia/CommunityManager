@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.hdc.model.Activity;
 import com.hdc.model.Community;
+import com.hdc.model.Finance;
 import com.hdc.model.Member;
 import com.hdc.model.Nature;
 import com.hdc.model.Notice;
@@ -18,4 +19,5 @@ public interface CustomService {
 	public List<Nature> queryNatureList(Nature nature,Page page);
 	public List<Activity> queryActivityList(Activity activity,Page page);
 	public List<Notice> queryNoticeList(Notice notice);
+	public List<Finance> queryFinanceList(Finance finance,Page page);
 }
