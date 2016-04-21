@@ -7,6 +7,7 @@
 <head>
 <link type="text/css" rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>" />
 <link type="text/css" rel="stylesheet" href="<c:url value='/css/flyaway.min.css'/>" />
+<script type="text/javascript" src="<c:url value='/assets/js/jquery-1.8.3.min.js'/>"></script>
 </head>
 <body class="page-body">
 
