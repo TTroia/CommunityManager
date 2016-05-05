@@ -3,11 +3,13 @@ package com.hdc.dao;
 import java.util.List;
 
 import com.hdc.model.Activity;
+import com.hdc.model.Analysis_activity;
 import com.hdc.model.Community;
 import com.hdc.model.Finance;
 import com.hdc.model.Member;
 import com.hdc.model.Nature;
 import com.hdc.model.Notice;
+import com.hdc.model.rowmap.ActivityAnalysisRowMapper;
 import com.hdc.model.rowmap.ObjectRowMapper;
 import com.hdc.page.Page;
 import com.hdc.util.Constant;
@@ -199,6 +201,22 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 		if (page != null) {
 			page.setResultList(list);
 		}
+		return list;
+	}
+
+	@Override
+	public List<Analysis_activity> queryAnalysis_activities(
+			Analysis_activity analysis_activity) {
+		if(analysis_activity==null){
+			return null;
+		}
+		StringBuffer sql = new StringBuffer();
+		sql.append("select com_name,count(*)  from ").append(Constant.ACTIVITY_TABLE_NAME)
+		.append(" group by com_id LIMIT 0,10 ");
+		log.info(sql);
+		List<Analysis_activity> list = this.getJdbcTemplate().query(
+				sql.toString(),
+				new ActivityAnalysisRowMapper());
 		return list;
 	}
 
