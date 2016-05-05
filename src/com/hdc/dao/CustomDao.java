@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.hdc.model.Activity;
 import com.hdc.model.Analysis_activity;
+import com.hdc.model.Analysis_finance;
 import com.hdc.model.Community;
 import com.hdc.model.Finance;
 import com.hdc.model.Member;
@@ -20,4 +21,5 @@ public interface CustomDao {
 	public List<Notice> queryNoticeList(Notice notice);
 	public List<Finance> queryFinanceList(Finance finance,Page page);
 	public List<Analysis_activity> queryAnalysis_activities(Analysis_activity analysis_activity);
+	public List<Analysis_finance> queryAnalysis_finances(Analysis_finance analysis_finance,String comid);
 }	

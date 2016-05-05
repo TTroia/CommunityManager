@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.hdc.model.Activity;
 import com.hdc.model.Analysis_activity;
+import com.hdc.model.Analysis_finance;
 import com.hdc.model.Community;
 import com.hdc.model.Finance;
 import com.hdc.model.Member;
 import com.hdc.model.Nature;
 import com.hdc.model.Notice;
 import com.hdc.model.rowmap.ActivityAnalysisRowMapper;
+import com.hdc.model.rowmap.FinanceAnalysisRowMapper;
 import com.hdc.model.rowmap.ObjectRowMapper;
 import com.hdc.page.Page;
 import com.hdc.util.Constant;
@@ -217,6 +219,19 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 		List<Analysis_activity> list = this.getJdbcTemplate().query(
 				sql.toString(),
 				new ActivityAnalysisRowMapper());
+		return list;
+	}
+
+	@Override
+	public List<Analysis_finance> queryAnalysis_finances(
+			Analysis_finance analysis_finance,String comid) {
+		if(null==analysis_finance){
+			return null;
+		}
+		StringBuffer sql =new StringBuffer();
+		sql.append("select * from (select sum(spend) a from finance where spend < 0 and com_id = "+comid+") a,(select sum(spend) b from finance where spend > 0 and com_id = "+comid+") b");
+		log.info(sql.toString());
+		List<Analysis_finance> list = this.getJdbcTemplate().query(sql.toString(), new FinanceAnalysisRowMapper());
 		return list;
 	}
 

@@ -36,5 +36,9 @@
 		<action name="activityAnalysis" class="activityAnalysisAction">
 			<result name="list">/manage/analysis/activityAnalysis.jsp</result>
 		</action>
+		
+		<action name="financeAnalysis" class="financeAnalysisAction">
+			<result name="list">/manage/analysis/financeAnalysis.jsp</result>
+		</action>
     </package>
 </struts>

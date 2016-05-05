@@ -6,6 +6,10 @@
     http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
 	default-autowire="byName">
 	
+	<bean id="financeAnalysisAction" class="com.hdc.action.FinanceAnalysisAction"
+		scope="prototype">
+	</bean>
+	
 	<bean id="activityAnalysisAction" class="com.hdc.action.ActivityAnalysisAction"
 		scope="prototype">
 	</bean>

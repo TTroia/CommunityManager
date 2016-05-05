@@ -5,6 +5,7 @@ import java.util.List;
 import com.hdc.dao.CustomDao;
 import com.hdc.model.Activity;
 import com.hdc.model.Analysis_activity;
+import com.hdc.model.Analysis_finance;
 import com.hdc.model.Community;
 import com.hdc.model.Finance;
 import com.hdc.model.Member;
@@ -57,5 +58,12 @@ public class CustomServiceImpl implements CustomService {
 	public List<Analysis_activity> queryAnalysis_activities(
 			Analysis_activity analysis_activity) {
 		return this.customDao.queryAnalysis_activities(analysis_activity);
+	}
+
+	@Override
+	public List<Analysis_finance> queryAnalysis_finances(
+			Analysis_finance analysis_finance,String comid) {
+		// TODO Auto-generated method stub
+		return this.customDao.queryAnalysis_finances(analysis_finance,comid);
 	}
 }
