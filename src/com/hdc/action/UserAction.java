@@ -117,7 +117,7 @@ public class UserAction extends PaginationAction {
 			newUser.setCreateDate(new Date());
 			newUser.setStatus(1);
 			Role temp = new Role();
-			temp.setRoleId(roleId);
+			temp.setRoleId(newUser.getRoleId());
 			temp = (Role) this.baseService.getObjectById(temp);
 			if(temp!=null){
 				newUser.setModuleIds(temp.getModuleIds());
