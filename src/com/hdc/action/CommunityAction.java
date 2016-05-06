@@ -36,7 +36,11 @@ public class CommunityAction extends PaginationAction {
 		if(community==null){
 			this.community=new Community();
 		}
+		if(super.getUser().getRoleId()==2){
+			community.setPartof(super.getUser().getUsername());
+		}
 		this.resultList=this.customService.queryCommunitieList(community, super.getPage());
+		
 		this.natureList=this.baseService.getObjectList(new Nature(), null);
 		this.partofList=new ArrayList<String>();
 		List<User> users=new ArrayList<User>();

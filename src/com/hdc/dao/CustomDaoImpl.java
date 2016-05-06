@@ -33,6 +33,9 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 		if(community!=null && !StringUtil.isNullOrBlank(community.getName())){
 			sql.append("and name like '%"+community.getName()+"%' ");
 		}
+		if(community!=null && !StringUtil.isNullOrBlank(community.getPartof())){
+			sql.append("and partof like '%"+community.getPartof()+"%' ");
+		}
 		sql.append(" order by  createDate desc");
 		if (page != null) {
 			StringBuffer buffer = new StringBuffer();
@@ -133,6 +136,9 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 				.append(" where 1=1  ");
 		if(activity!=null && !StringUtil.isNullOrBlank(activity.getName())){
 			sql.append("and name like '%"+activity.getName()+"%' ");
+		}
+		if(activity!=null && !StringUtil.isNullOrBlank(activity.getPartof())){
+			sql.append("and partof like '%"+activity.getPartof()+"%' ");
 		}
 		sql.append(" order by  applyDate desc");
 		if (page != null) {
