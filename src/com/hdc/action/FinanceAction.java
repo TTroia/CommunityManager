@@ -48,6 +48,7 @@ public class FinanceAction extends PaginationAction {
 					this.finance.setBalance(tempList.get(tempList.size()-1).getBalance()+this.finance.getSpend());
 				}else if(way==1){
 					this.finance.setBalance(tempList.get(tempList.size()-1).getBalance()-this.finance.getSpend());
+					this.finance.setSpend(0-finance.getSpend());
 				}
 			}else {
 				this.finance.setBalance(this.finance.getSpend());
