@@ -17,7 +17,6 @@
 <body class="page-body">
 
 <div style="width: 100%;text-align:center;background:gray" >
-	<h1>活动次数分析</h1>
         <div  id="main" style="width: 100%;height:800px;margin:0 auto;"></div>
     </div>
     <button id="r" onclick="ax()">刷新数据</button>
@@ -25,9 +24,10 @@
     <script>
 	var lable=new Array();
 	var ldata=new Array();
+	var sb=" ";
 	function ax(){
 		$.ajax({
-	  			url:"<c:url value='/activityAnalysis!top10Com.action' />",
+	  			url:"<c:url value='/memberAnalysis!getData.action' />",
 	  			dataType:"json",
 	  			type:"post",
 	  			error : function() {
@@ -35,10 +35,19 @@
 					return false;
 				},
 	  			success:function(data){
+	  				
 	  					 for(var key in data){
 	  					 	lable.push(key);
-	  					 	ldata.push(data[key]);
+	  					 	//ldata.push(data[key]);
+	  					 	var map = {value:data[key],name:key};
+	  					 	//sb='{value:'+data[key]+', name:'+key+'}';
+	  					 	ldata.push(map);
 	  					 }
+	  					 alert(lable);
+	  					 alert(ldata);
+	  					 
+	  					//alert(lable);
+	  					//alert(ldata);
 	  				return false;
 				}
 				});
@@ -46,26 +55,45 @@
 	
 	function show(){
 		var option = {
-            title: {
-            	show : true,
-                text: '活动次数分析'
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c}人 ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:lable
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                }
             },
-            tooltip: {},
-            legend: {
-                data:['活动次数']
+            labelLine: {
+                normal: {
+                    show: false
+                }
             },
-            xAxis: {
-                data: lable
-            },
-            yAxis: {min : '0',name:'活动次数',
-            	nameTextStyle:{fontSize:20,fontWeight:'lighter',color:'#FFF8DC'}
-            },
-            series: [{
-                name: '活动次数',
-                type: 'bar',
-                data: ldata
-            }]
-        };
+            data:ldata
+            
+        }
+    ]
+};
+
 	
 var myChart = echarts.init(document.getElementById('main'));
  myChart.setOption(option);

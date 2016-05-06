@@ -5,6 +5,7 @@ import java.util.List;
 import com.hdc.model.Activity;
 import com.hdc.model.Analysis_activity;
 import com.hdc.model.Analysis_finance;
+import com.hdc.model.Analysis_member;
 import com.hdc.model.Community;
 import com.hdc.model.Finance;
 import com.hdc.model.Member;
@@ -12,6 +13,7 @@ import com.hdc.model.Nature;
 import com.hdc.model.Notice;
 import com.hdc.model.rowmap.ActivityAnalysisRowMapper;
 import com.hdc.model.rowmap.FinanceAnalysisRowMapper;
+import com.hdc.model.rowmap.MemberAnalysisRowMapper;
 import com.hdc.model.rowmap.ObjectRowMapper;
 import com.hdc.page.Page;
 import com.hdc.util.Constant;
@@ -232,6 +234,19 @@ public class CustomDaoImpl extends CommonDaoImpl implements CustomDao {
 		sql.append("select * from (select sum(spend) a from finance where spend < 0 and com_id = "+comid+") a,(select sum(spend) b from finance where spend > 0 and com_id = "+comid+") b");
 		log.info(sql.toString());
 		List<Analysis_finance> list = this.getJdbcTemplate().query(sql.toString(), new FinanceAnalysisRowMapper());
+		return list;
+	}
+
+	@Override
+	public List<Analysis_member> queryAnalysis_member(
+			Analysis_member analysis_member) {
+		if(null==analysis_member){
+			return null;
+		}
+		StringBuffer sql = new StringBuffer();
+		sql.append("select com_name,count(1) num from member GROUP BY com_name");
+		log.info(sql);
+		List<Analysis_member> list=this.getJdbcTemplate().query(sql.toString(), new MemberAnalysisRowMapper());
 		return list;
 	}
 

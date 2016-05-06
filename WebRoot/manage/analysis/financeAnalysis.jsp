@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
 <link type="text/css" rel="stylesheet" href="<c:url value='/assets/css/bootstrap.min.css'/>" />
- <script type="text/javascript" src="<c:url value='/js/echarts.simple.min.js'/>"></script>
+ <script type="text/javascript" src="<c:url value='/js/echarts.min.js'/>"></script>
  <style>
     canvas {
         -moz-user-select: none;
@@ -20,8 +20,8 @@
 	<h1>财务分析</h1>
         <div  id="main" style="width: 100%;height:800px;margin:0 auto;"></div>
     </div>
-    <button id="r" onclick="ax()">Randomize Data</button>
-    <button id="a" onclick="show()">click</button>
+    <button id="r" onclick="ax()">刷新数据</button>
+    <button id="a" onclick="show()">显示</button>
     <script>
 	var lable=new Array();
 	var ldata=new Array();
@@ -45,11 +45,11 @@
 	}
 	
 	function show(){
-		var option = {
+		/*var option = {
 
 
     title: {
-        text: 'Customized Pie',
+        text: '收支情况图',
         left: 'center',
         top: 20,
         textStyle: {
@@ -77,8 +77,8 @@
             radius : '55%',
             center: ['50%', '50%'],
             data:[
-                {value:ldata[0], name:'支出:'+ldata[0]+'元'},
-                {value:ldata[1], name:'收入:'+ldata[1]+'元'},
+                {value:ldata[0], name:'支出'},
+                {value:ldata[1], name:'收入'},
 
             ].sort(function (a, b) { return a.value - b.value}),
             roseType: 'angle',
@@ -108,7 +108,22 @@
             }
         }
     ]
+};*/
+	
+var option = {
+    series : [
+        {
+            name: '访问来源',
+            type: 'pie',
+            radius: '55%',
+            data:[
+                {value:ldata[0], name:'收入'},
+                {value:ldata[1], name:'支出'},
+            ]
+        }
+    ]
 };
+
 	
 var myChart = echarts.init(document.getElementById('main'));
  myChart.setOption(option);

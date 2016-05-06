@@ -40,5 +40,9 @@
 		<action name="financeAnalysis" class="financeAnalysisAction">
 			<result name="list">/manage/analysis/financeAnalysis.jsp</result>
 		</action>
+		
+		<action name="memberAnalysis" class="memberAnalysisAction">
+			<result name="list">/manage/analysis/memberAnalysis.jsp</result>
+		</action>
     </package>
 </struts>

@@ -183,8 +183,7 @@ $(function ()
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="img/avatar1_small.jpg">
-                            <span class="username">${user.username }</span>
+                            <span class="username"><font style="color:red">欢迎：</font>${user.username }</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -261,39 +260,7 @@ $(function ()
                           </div>
                       </section>
                   </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol red">
-                              <i class="icon-tags"></i>
-                          </div>
-                          <div class="value">
-                              <h1>140</h1>
-                              <p>Sales</p>
-                          </div>
-                      </section>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol yellow">
-                              <i class="icon-shopping-cart"></i>
-                          </div>
-                          <div class="value">
-                              <h1>345</h1>
-                              <p>New Order</p>
-                          </div>
-                      </section>
-                  </div>
-                  <div class="col-lg-3 col-sm-6">
-                      <section class="panel">
-                          <div class="symbol blue">
-                              <i class="icon-bar-chart"></i>
-                          </div>
-                          <div class="value">
-                              <h1>34,500</h1>
-                              <p>Total Profit</p>
-                          </div>
-                      </section>
-                  </div>
+                 
               </div>
               <!--state overview end-->
 

@@ -115,90 +115,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </form>	
     	<div class="clearfix"></div>
     	
-    	<div class="checkbox">
-    		<label>
-    			<input type="checkbox" value="" />
-    			<i class="input-helper">
-    				保持登录状态
-    			</i>
-    		</label>
-    	</div>
+    	
         
         <div class="btn btn-login btn-danger btn-float" onclick="login();">
         	<i class="zmdi zmdi-arrow-forward" onclick="login();"></i>
         </div>
         
-        <ul class="login-navigation">
-        	<li class="bgm-red" data-ng-click="lctrl.login = 0; lctrl.register = 1">Register</li>
-        	<li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.login = 0; lctrl.forgot = 1">Forgot Password?</li>
-        </ul>
+        
     </div>
     
-    <div class="lc-block" id="l-register" data-ng-class="{ 'toggled': lctrl.register === 1 }" data-ng-if="lctrl.register === 1">
-    	<h1 class="lean">Azrael</h1>
 
-    	<div class="input-group m-b-20">
-    		<span class="input-group-addon">
-    			<i class="zmdi zmdi-account"></i>
-    		</span>
-    		<div class="fg-line">
-    			<input type="text" class="form-control" placeholder="Username" regex="^\w{3,16}$"/>
-    		</div>
-    	</div>
 
-        <div class="input-group m-b-20">
-    		<span class="input-group-addon">
-    			<i class="zmdi zmdi-email"></i>
-    		</span>
-    		<div class="fg-line">
-    			<input type="text" class="form-control" placeholder="Email Address" regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$"/>
-    		</div>
-    	</div>
-
-        <div class="input-group m-b-20">
-    		<span class="input-group-addon">
-    			<i class="zmdi zmdi-male"></i>
-    		</span>
-    		<div class="fg-line">
-    			<input type="password" class="form-control" placeholder="Password" regex="^\w+"/>
-    		</div>
-    	</div>
-    	
-    	<div class="clearfix"></div>
-    	
-    	<div class="checkbox">
-    		<label>
-    			<input type="checkbox" value=""/>
-    			<i class="input-helper"></i>
-    			接受许可协议
-    		</label>
-    	</div>
-    	
-    	<a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
     
-    	<ul class="login-navigation">
-	      <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.register = 0; lctrl.login = 1">Login</li>
-	      <li data-block="#l-forget-password" class="bgm-orange" data-ng-click="lctrl.register = 0; lctrl.forgot = 1">Forgot Password?</li>
-	    </ul>
-    </div>
-
-    <div class="lc-block" id="l-forget-password" data-ng-class="{ 'toggled': lctrl.forgot === 1 }" data-ng-if="lctrl.forgot === 1">
-    	<h1 class="lean">Azrael</h1>
-    	<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu risus. Curabitur commodo lorem fringilla enim feugiat commodo sed ac lacus.</p>
-    	<div class="input-group m-b-20">
-	      <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-	      <div class="fg-line">
-	        <input type="text" class="form-control" placeholder="Email Address" regex="^\w+@\w+\.[a-zA-Z]+(\.[a-zA-Z]+)?$"/>
-	      </div>
-	    </div>
-	
-	    <a href="" class="btn btn-login btn-danger btn-float"><i class="zmdi zmdi-arrow-forward"></i></a>
-	
-	    <ul class="login-navigation">
-	      <li data-block="#l-login" class="bgm-green" data-ng-click="lctrl.forgot = 0; lctrl.login = 1">Login</li>
-	      <li data-block="#l-register" class="bgm-red" data-ng-click="lctrl.forgot = 0; lctrl.register = 1">Register</li>
-	    </ul>
-    </div>
  </body>
  	
  	<script src="login_style/js/bower_components/jquery/dist/jquery.min.js"></script>
