@@ -45,84 +45,44 @@
 	}
 	
 	function show(){
-		/*var option = {
 
-
-    title: {
-        text: '收支情况图',
-        left: 'center',
-        top: 20,
-        textStyle: {
-            color: '#ccc'
-        }
+	
+var option = {
+    title : {
+        text: '财务分析',
+        subtext: '收入/支出对比',
+        x:'center'
     },
-
     tooltip : {
         trigger: 'item',
         formatter: "{a} <br/>{b} : {c} ({d}%)"
     },
-
-    visualMap: {
-        show: false,
-        min: 80,
-        max: 600,
-        inRange: {
-            colorLightness: [0, 1]
-        }
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['支出','收入']
     },
     series : [
         {
-            name:'金额',
-            type:'pie',
+            name: '访问来源',
+            type: 'pie',
             radius : '55%',
-            center: ['50%', '50%'],
+            center: ['50%', '60%'],
             data:[
                 {value:ldata[0], name:'支出'},
-                {value:ldata[1], name:'收入'},
-
-            ].sort(function (a, b) { return a.value - b.value}),
-            roseType: 'angle',
-            label: {
-                normal: {
-                    textStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    }
-                }
-            },
-            labelLine: {
-                normal: {
-                    lineStyle: {
-                        color: 'rgba(255, 255, 255, 0.3)'
-                    },
-                    smooth: 0.2,
-                    length: 10,
-                    length2: 20
-                }
-            },
+                {value:ldata[1], name:'收入'}
+            ],
             itemStyle: {
-                normal: {
-                    color: '#c23531',
-                    shadowBlur: 200,
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
                     shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
             }
         }
     ]
-};*/
-	
-var option = {
-    series : [
-        {
-            name: '访问来源',
-            type: 'pie',
-            radius: '55%',
-            data:[
-                {value:ldata[0], name:'收入'},
-                {value:ldata[1], name:'支出'},
-            ]
-        }
-    ]
 };
+
 
 	
 var myChart = echarts.init(document.getElementById('main'));

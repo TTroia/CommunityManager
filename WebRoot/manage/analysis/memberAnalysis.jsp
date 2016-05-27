@@ -43,11 +43,7 @@
 	  					 	//sb='{value:'+data[key]+', name:'+key+'}';
 	  					 	ldata.push(map);
 	  					 }
-	  					 alert(lable);
-	  					 alert(ldata);
 	  					 
-	  					//alert(lable);
-	  					//alert(ldata);
 	  				return false;
 				}
 				});
