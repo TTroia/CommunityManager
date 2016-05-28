@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-autowire="byName">
+	
+	<bean id="memberAnalysisAction" class="com.hdc.action.MemberAnalysisAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="financeAnalysisAction" class="com.hdc.action.FinanceAnalysisAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="activityAnalysisAction" class="com.hdc.action.ActivityAnalysisAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="financeAction" class="com.hdc.action.FinanceAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="memberAction" class="com.hdc.action.MemberAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="mailAction" class="com.hdc.action.MailAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="activityAction" class="com.hdc.action.ActivityAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="natureAction" class="com.hdc.action.NatureAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="communityAction" class="com.hdc.action.CommunityAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="userAction" class="com.hdc.action.UserAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="loginAction" class="com.hdc.action.LoginAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="roleAction" class="com.hdc.action.RoleAction"
+		scope="prototype">
+	</bean>
+	
+	<bean id="moduleAction" class="com.hdc.action.ModuleAction"
+		scope="prototype">
+	</bean>
+	
+	
+	
+</beans>
