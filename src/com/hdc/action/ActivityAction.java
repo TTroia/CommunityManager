@@ -74,8 +74,8 @@ public class ActivityAction extends PaginationAction{
 		try {
 			activity.setApplyUser(super.getUser().getUsername());
 			activity.setApplyDate(new Date());
-			activity.setApplyState(0);
-			activity.setApplyState2(0);
+			//activity.setApplyState(0);
+			//activity.setApplyState2(0);
 			activity.setCompleteState(0);
 			activity.setCom_id(super.getUser().getCommunityId());
 			activity.setCom_name(super.getUser().getCommunityName());
@@ -115,16 +115,27 @@ public class ActivityAction extends PaginationAction{
 	//系社联确认
 	public String xi_ok(){
 		try {
-			if(this.activity.getApplyState()==0){
 				this.activity.setApplyState(1);
 				this.activity.setApproveDate(new Date());
 				this.activity.setApproveUser(super.getUser().getUsername());
-			}else if(this.activity.getApplyState()==1){
+			int k=this.baseService.update(activity);
+			if(k>0){
+				super.outPrintJson(getJsonInfo("确认成功", Constant.SUCCESS));
+			}else{
+				super.outPrintJson(getJsonInfo("确认失败", Constant.ERROR));
+			}
+		} catch (Exception e) {
+			log.error(StringUtil.outputException(e));
+		}
+		return null;
+	}
+	
+	//系社联驳回
+	public String xi_no(){
+		try {
 				this.activity.setApplyState(0);
 				this.activity.setApproveDate(new Date());
 				this.activity.setApproveUser(super.getUser().getUsername());
-			}
-			
 			int k=this.baseService.update(activity);
 			if(k>0){
 				super.outPrintJson(getJsonInfo("确认成功", Constant.SUCCESS));
@@ -140,15 +151,27 @@ public class ActivityAction extends PaginationAction{
 	//校社联确认
 	public String xiao_ok(){
 		try {
-			if(this.activity.getApplyState2()==0){
 				this.activity.setApplyState2(1);
 				this.activity.setApproveDate2(new Date());
 				this.activity.setApproveUser2(super.getUser().getUsername());
-			}else if(this.activity.getApplyState2()==1){
+			
+			int k=this.baseService.update(activity);
+			if(k>0){
+				super.outPrintJson(getJsonInfo("确认成功", Constant.SUCCESS));
+			}else{
+				super.outPrintJson(getJsonInfo("确认失败", Constant.ERROR));
+			}
+		} catch (Exception e) {
+			log.error(StringUtil.outputException(e));
+		}
+		return null;
+	}
+	//校社联驳回
+	public String xiao_no(){
+		try {
 				this.activity.setApplyState2(0);
 				this.activity.setApproveDate2(new Date());
 				this.activity.setApproveUser2(super.getUser().getUsername());
-			}
 			
 			int k=this.baseService.update(activity);
 			if(k>0){
@@ -247,6 +270,21 @@ public class ActivityAction extends PaginationAction{
 		}
 		return null;
 	}
+	
+	public String remark(){
+		try {
+			int k=this.baseService.update(activity);
+			if(k>0){
+				super.outPrintJson(getJsonInfo("成功", Constant.SUCCESS));
+			}else{
+				super.outPrintJson(getJsonInfo("失败", Constant.ERROR));
+			}
+		} catch (Exception e) {
+			log.error(StringUtil.outputException(e));
+		}
+		return null;
+	}
+	
 	public BaseService getBaseService() {
 		return baseService;
 	}

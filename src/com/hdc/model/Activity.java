@@ -31,8 +31,15 @@ public class Activity {
 	private Date approveDate2;  //校审批时间
 	private Integer completeState;  //活动完成状态
 	private String tableAdd;  //上传word的地址
+	private String attr; //审批 不准理由
 	
 	
+	public String getAttr() {
+		return attr;
+	}
+	public void setAttr(String attr) {
+		this.attr = attr;
+	}
 	public String getPartof() {
 		return partof;
 	}

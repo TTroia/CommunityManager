@@ -45,6 +45,9 @@
 					<td class="th30 " >
 						校审批时间
 					</td>
+					<td>
+						批复
+					</td>
 					<td class="th30 " >
 						完成状态
 					</td>
@@ -82,7 +85,7 @@
 							<c:if test="${result.applyState==1 }">
 								<img src="<c:url value='/img/yes.png' />"  alt="系社联已审批"/>
 							</c:if>
-							<c:if test="${result.applyState!=1 }">
+							<c:if test="${result.applyState==0 }">
 								<img src="<c:url value='/img/no.png' />"  alt="系社联已驳回"/>
 							</c:if>
 						</td>
@@ -96,7 +99,7 @@
 							<c:if test="${result.applyState2==1 }">
 								<img src="<c:url value='/img/yes.png' />"  alt="校社联已审批"/>
 							</c:if>
-							<c:if test="${result.applyState2!=1 }">
+							<c:if test="${result.applyState2==0 }">
 								<img src="<c:url value='/img/no.png' />"  alt="校社联已驳回"/>
 							</c:if>
 						</td>
@@ -106,6 +109,10 @@
 						<td>
 							<fmt:formatDate pattern="yyyy-MM-dd" value="${result.approveDate2}" />
 						</td>
+						<td>
+							${result.attr }
+						</td>
+						
 						<td>
 							<c:if test="${result.completeState==1 }">
 								<img src="<c:url value='/img/complete.png' />"  alt="活动已完成"/>
@@ -131,12 +138,18 @@
       						<c:if test="${user.roleId==1||user.roleId==0 }">
       							<c:if test="${result.applyState==1}">
 									<button type="button" class="btn btn-info btn-xs" onclick="xiao_ok('${result.id}','${result.applyState2 }')">确认</button>&nbsp;&nbsp;
-									<button type="button" class="btn btn-info btn-xs" onclick="xiao_ok('${result.id}','${result.applyState2 }')">不准</button>
+									<button type="button" class="btn btn-info btn-xs" onclick="xiao_no('${result.id}','${result.applyState2 }')">不准</button>
+									<c:if test="${result.applyState2==0}">.
+										<button type="button" class="btn btn-info btn-xs" onclick="remark('${result.id}')">批复</button>
+									</c:if>
 								</c:if>
 							</c:if>
 							<c:if test="${user.roleId==2||user.roleId==0 }">
 									<button type="button" class="btn btn-info btn-xs" onclick="xi_ok('${result.id}','${result.applyState }')">同意</button>&nbsp;&nbsp;
-									<button type="button" class="btn btn-info btn-xs" onclick="xi_ok('${result.id}','${result.applyState }')">不准</button>
+									<button type="button" class="btn btn-info btn-xs" onclick="xi_no('${result.id}','${result.applyState }')">不准</button>
+									<c:if test="${result.applyState==0}">
+										<button type="button" class="btn btn-info btn-xs" onclick="remark('${result.id}')">批复</button>
+									</c:if>
 							</c:if>
 						</td>
 					</tr>
@@ -254,6 +267,43 @@
 </div>
 <!-- 添加模态框-end -->
 
+<!-- 添加备注模态框 -start-->
+	<div class="modal fade" id="attrModal" >
+   <div class="modal-dialog">
+      <div class="modal-content" style="border-style:solid; border-width:1px; border-color:#000;background-color:#DCDCDC" >
+         <div class="modal-header">
+            <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">
+                  &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               	批复
+            </h4>
+         </div>
+         <div class="modal-body">
+          	<form method="post" action="<c:url value='/activity!remark.action' />" role="form" onsubmit="return false" class="form-horizontal" id="attrForm">
+          		<input type="hidden" class="form-control" id="attr_id" name="activity.id">
+          		<div class="form-group">
+      				<label for="attr_attr" class="col-sm-2 control-label">批复</label>
+      				<div class="col-sm-10">
+         				<input type="text" class="form-control" id="attr_attr" name="activity.attr" style="height:30px">
+      				</div>
+  				</div>
+          	</form>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭
+            </button>
+            <button type="button" class="btn btn-primary"  onclick="attrSumbit();">
+             	  提交
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+</div><!-- /.modal -->
+</div>
+<!-- 添加备注模态框-end -->
+
 <!-- 上传模态框-start -->
 <div class="modal fade" id="uploadModal" >
    <div class="modal-dialog">
@@ -321,6 +371,38 @@ function del(id){
 				});
 			
 }
+
+function remark(id){
+	$('#attr_id').val(id);
+	$('#attrModal').modal('show');
+}
+
+function attrSumbit(){
+	$.ajax({
+	  			url:$("#attrForm").attr("action"),
+	  			dataType:"json",
+	  			type:"post",
+	  			//async : false,
+	  			data:$("#attrForm").serialize(),
+	  			error : function() {
+					return false;
+				},
+	  			success:function(data){
+	  				if(data['retcode']==0){
+	  					$('#attrModal').modal('hide');
+	  					$('.modal-backdrop').fadeOut();
+	  					showSucc();
+	  					$("#my_chart").load("<c:url value='/activity!list.action'/>");
+	  					
+	  				}
+	  				else if(data['retcode']==1){
+	  					showError();
+	  				}
+	  				return false;
+			},
+			});
+}
+
 function show_edit_dialog2(id,name,location,teacher,tableAdd,holdDate){
 		$('#edit_id').val(id);
 		$('#edit_name').val(name);
@@ -407,10 +489,56 @@ function xiao_ok(id,applyState2){
 			}
 	});
 }
+
+//校社联驳回
+function xiao_no(id,applyState2){
+	$.ajax({
+		url:"<c:url value='/activity!xiao_no.action'/>",
+		dataType:"json",
+		type:"post",
+		data:{"activity.id":id,"activity.applyState2":applyState2},
+		error : function() {
+			return false;
+		},
+		success:function(data){
+	  				if(data['retcode']==0){
+	  					showSucc();
+	  					$("#my_chart").load("<c:url value='/activity!list.action'/>");
+	  				}
+	  				else if(data['retcode']==1){
+	  					showError();
+	  				}
+	  				return false;
+			}
+	});
+}
 //系社联确认
 function xi_ok(id,applyState){
 	$.ajax({
 		url:"<c:url value='/activity!xi_ok.action'/>",
+		dataType:"json",
+		type:"post",
+		data:{"activity.id":id,"activity.applyState":applyState},
+		error : function() {
+			return false;
+		},
+		success:function(data){
+	  				if(data['retcode']==0){
+	  					showSucc();
+	  					$("#my_chart").load("<c:url value='/activity!list.action'/>");
+	  				}
+	  				else if(data['retcode']==1){
+	  					showError();
+	  				}
+	  				return false;
+			}
+	});
+}
+
+//系社联驳回
+function xi_no(id,applyState){
+	$.ajax({
+		url:"<c:url value='/activity!xi_no.action'/>",
 		dataType:"json",
 		type:"post",
 		data:{"activity.id":id,"activity.applyState":applyState},
